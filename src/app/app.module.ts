@@ -9,11 +9,23 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+
+//IMPORTAMOS ADMOB FREE
+import { AdMobFree } from '@ionic-native/admob-free/ngx';
+
+//IMPORTAMOS SERVICIO ADMOB PROPIO.
+
+import { AdmobService } from './services/admob.service';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
+    //AÑADIMOS ADMOB COMO PROVIDER
+    AdMobFree,
+    //AÑADIMOS NUESTRO SERVICIO.
+    AdmobService,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
